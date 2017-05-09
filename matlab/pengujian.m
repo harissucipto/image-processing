@@ -1,10 +1,9 @@
 clc;
 clear;
 
-contoh = [1; 2; 3; 4; 5; 6];
-contoh2 = bubbleSort(contoh);
-tengah = median(contoh2);
+citra = imread('lenanoise.jpg');
 
-disp(contoh2);
-disp(tengah);
+hasil = noiseReduction(citra);
 
+subplot(1,2,1),imshow(citra),title('citra hasil operasi');   
+subplot(1,2,2),imshow(hasil),title('citra hasil operasi');   
