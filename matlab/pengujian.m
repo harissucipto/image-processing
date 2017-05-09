@@ -1,9 +1,8 @@
 clc;
 clear;
 
-citra = imread('lenanoise.jpg');
+contoh = [1; 2; 4; 1];
+contoh2 = bubbleSort(contoh);
 
-hasil = imageSmoothing(citra);
+disp(contoh);
 
-subplot(1,2,1),imshow(citra),title('citra hasil operasi');   
-subplot(1,2,2),imshow(hasil),title('citra hasil operasi');   
