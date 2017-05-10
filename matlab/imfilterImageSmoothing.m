@@ -7,8 +7,9 @@ citra = imread('lenanoise.jpg');
 citra = citra(:,:,1);
 
 
+h = [1/9 1/9 1/9; 1/9 1/9 1/9; 1/9 1/9 1/9];
 
-hasil = medfilt2(citra, [3, 3]);
+hasil = imfilter(citra, h, 'conv');
 
 subplot(1,2,1),imshow(citra),title('citrak asli');   
 subplot(1,2,2),imshow(hasil),title('citra hasil operasi');   

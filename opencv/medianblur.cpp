@@ -45,19 +45,8 @@ int main(){
 	// force convert RGB image to grey
 	cvtColor(dummy,  img, CV_BGR2GRAY);
 
-	Mat img1(img.size(), img.type());
-	for(int i=1;i<img.rows-1; i++){
-		for(int j=1;j<img.cols-1; j++){
-			data[0]=img.at<uchar>(i-1,j-1); data[1]=img.at<uchar>(i-1,j);
-			data[2]=img.at<uchar>(i-1,j+1); data[3]=img.at<uchar>(i,j-1);  
-			data[4]=img.at<uchar>(i,j); data[5]=img.at<uchar>(i,j+1);
-			data[6]=img.at<uchar>(i+1,j-1); data[7]=img.at<uchar>(i+1,j);
-			data[8]=img.at<uchar>(i+1,j+1);
-		
-			sort(data,9);
-			img1.at<uchar>(i,j)=median(data,9); 
-		}
-	}
+	Mat img1;
+	medianBlur(img, img1, 3);
 
     namedWindow("Original Image", WINDOW_NORMAL);
 	resizeWindow("Original Image", 300, 300);

@@ -27,8 +27,10 @@ int main(){
 		}
 	}
     
-	namedWindow("Original Image", CV_WINDOW_AUTOSIZE); 
-	namedWindow("Image Smoothing", CV_WINDOW_AUTOSIZE);
+	namedWindow("Original Image", WINDOW_NORMAL);
+	resizeWindow("Original Image", 300, 300);
+	namedWindow("Image Smoothing", WINDOW_NORMAL);
+	resizeWindow("Image Smoothing", 300, 300);
 	imshow("Original Image", img); imshow("Image Smoothing", img1);
 	waitKey(0); return 0;
 }
